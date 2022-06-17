@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+@using (Html.BeginForm("Index", "Home", "Post"))
+{
+    <input type="number" name="value_1" value="0" />
+    <input type="number" name="value_2" value="0" />
+    <select name="sign">
+        @for (int i = 0; i < ViewBag.Operation.Length; i++)
+        {
+            <option value="@ViewBag.Operation[i].Value">
+                @ViewBag.Operation[i].Text
+            </option>
+        }
+    </select>
+    <input type="submit" value="вычислить" />
+    <p>@ViewBag.Result</p>
+}
